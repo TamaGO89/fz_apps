@@ -1,0 +1,14 @@
+App(
+    appid="skeleton_app",
+    name="[WIP] Skeleton Sample App",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="main_skeleton_app",
+    stack_size=2 * 1024,
+    requires=[
+        "gui",
+    ],
+    order=10,
+    fap_libs=["assets"],
+    fap_icon="app.png",
+    fap_category="GPIO",
+)
