@@ -19,6 +19,7 @@ Person* sharedPerson;
 
 // The drawing callback for the Person* view
 static void person_draw_callback(Canvas* canvas, void* context) {
+    UNUSED(context);
     canvas_clear(canvas);
     canvas_set_font(canvas, FontSecondary);
     canvas_draw_str(canvas, 14, 27, "Name - ");
@@ -56,7 +57,7 @@ static bool person_input_callback(InputEvent* event, void* context) {
     if(event->type == InputTypeLong && event->key == InputKeyBack) {
         return false;
     }
-    process_person_for_the_view(person, event);
+    process_person_data_for_the_view(person, event);
     return true;
 }
 
@@ -91,7 +92,7 @@ View* view_person_get_view(Person* person) {
     return person->view;
 }
 
-void process_person_for_the_view(Person* person, InputEvent* event) {
+void process_person_data_for_the_view(Person* person, InputEvent* event) {
     with_view_model(
         person->view,
         PersonalizedViewModel * model,

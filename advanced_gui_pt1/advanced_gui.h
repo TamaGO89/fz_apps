@@ -18,6 +18,8 @@
 #include <gui/modules/dialog_ex.h>
 #include <gui/view.h>
 
+#include "views/view_person.h"
+#include "views/view_car.h"
 #include "structures.h"
 
 void submenu_callback(void* context, uint32_t index);

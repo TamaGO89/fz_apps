@@ -45,6 +45,8 @@ typedef struct {
     Widget* widget;
     char input[TEXT_BUFFER_SIZE];
     char output[(TEXT_BUFFER_SIZE * 26) + (26)];
+    
+    FuriMutex* mutex;
 } AdvancedGUI;
 
 // ViewID associated to the View(s)

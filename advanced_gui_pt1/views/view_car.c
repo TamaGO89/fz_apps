@@ -21,6 +21,7 @@ Car* sharedCar;
 // that work all together.
 
 static void car_draw_callback(Canvas* canvas, void* context) {
+    UNUSED(context);
     canvas_clear(canvas);
     canvas_set_font(canvas, FontSecondary);
     canvas_draw_str(canvas, 14, 27, "Type - ");
@@ -55,7 +56,7 @@ static bool car_input_callback(InputEvent* event, void* context) {
     if(event->type == InputTypeLong && event->key == InputKeyBack) {
         return false;
     }
-    process_car_for_the_view(car, event);
+    process_car_data_for_the_view(car, event);
     return true;
 }
 
@@ -87,7 +88,7 @@ View* view_car_get_view(Car* car) {
     return car->view;
 }
 
-void process_car_for_the_view(Car* car, InputEvent* event) {
+void process_car_data_for_the_view(Car* car, InputEvent* event) {
     with_view_model(
         car->view,
         PersonalizedViewModel * model,
